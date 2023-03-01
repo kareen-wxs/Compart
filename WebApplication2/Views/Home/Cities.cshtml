@@ -1,0 +1,126 @@
+﻿
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+
+<div class="b-nrp-config-meta">
+    <h1 class="b-page-header">Сборка компьютера по каталогам интернет-магазинов</h1>
+</div>
+<!-- Example Code -->
+
+<p>
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true" aria-controls="collapseExample"
+       style="margin: 0 170px 0 170px; text-align: inherit; background-color: #dce6f1; border-color: #bbb; user-select: none; color: rgba(27, 27, 29, 0.5);font-weight: 700;font-size: 20px;line-height: 1.3;position: relative;padding: 12px 30px 12px 60px;cursor: pointer;">
+        <img src="../img/nostr.svg" alt=""> Быстрый подбор ПК  <img src="../img/указатель.svg" style="margin: 0 30px 0 825px;">
+    </a>
+</p>
+<div class="collapse show" id="collapseExample" style="">
+    <div class="card card-body" style="background-color: #dce6f1;">
+        <div class="b-cfgfw-body">
+            <div class="b-cfgfw-select-form">
+                <div class="b-form-group">
+                    <div class="b-label">выберите бюджет пк, <b class="red_text">$</b></div>
+                    <div class="range-wrapper">
+                        <div class="price-input">
+                            <div class="values">
+                                <span id="range1">
+                                    0
+                                </span>
+                                <span> &dash; </span>
+                                <span id="range2">
+                                    100
+                                </span>
+                            </div>
+                            <div class="container">
+                                <div class="slider-track"></div>
+                                <input type="range" min="0" max="10000" value="0" id="slider-1" oninput="slideOne()">
+                                <input type="range" min="0" max="10000" value="10000" id="slider-2" oninput="slideTwo()">
+                            </div>
+                                <script>
+
+                                window.onload = function () {
+                                    slideOne();
+                                    slideTwo();
+                                }
+                                let sliderOne = document.getElementById("slider-1");
+                                let sliderTwo = document.getElementById("slider-2");
+                                let displayValOne = document.getElementById("range1");
+                                let displayValTwo = document.getElementById("range2");
+                                let minGap = 0;
+                                let sliderTrack = document.querySelector(".slider-track");
+                                let sliderMaxValue = document.getElementById("slider-1").max;
+                                function slideOne() {
+                                    if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap) {
+                                        sliderOne.value = parseInt(sliderTwo.value) - minGap;
+                                    }
+                                    displayValOne.textContent = sliderOne.value+'$';
+                                    fillColor();
+                                }
+                                function slideTwo() {
+                                    if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap) {
+                                        sliderTwo.value = parseInt(sliderOne.value) + minGap;
+                                    }
+                                    displayValTwo.textContent = sliderTwo.value+'$';
+                                    fillColor();
+                                }
+                                function fillColor() {
+                                    percent1 = (sliderOne.value / sliderMaxValue) * 100;
+                                    percent2 = (sliderTwo.value / sliderMaxValue) * 100;
+                                    sliderTrack.style.background = `linear-gradient(to right, #dadae5 ${percent1}% , #313645 ${percent1}% , #313645 ${percent2}%, #dadae5 ${percent2}%)`;
+                                }
+                                </script>
+                                </div>
+                    </div>
+                    <div class="b-form-group">
+                        <div class="b-label">Выберите назначение</div>
+                        <div class="b-form-field">
+                            <ul class="b-list-cfg-params">
+                                <li>
+                                    <input type="radio" id="cfgGaming" name="dest" checked="checked" value="game">
+                                    <label for="cfgGaming">
+                                        <span class="b-ico">
+                                            <img src="../img/ico-cfg-gaming.svg" alt="">
+                                        </span>
+                                        <span class="b-txt">Для гейминга</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="cfgBusiness" name="dest" value="work">
+                                    <label for="cfgBusiness">
+                                        <span class="b-ico">
+                                            <img src="../img/ico-cfg-business.svg" alt="">
+                                        </span>
+                                        <span class="b-txt">Для работы</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="b-form-group">
+                        <div class="b-label">Предпочтения по марке</div>
+                        <div class="b-form-field">
+                            <ul class="b-list-cfg-params">
+                                <li>
+                                    <input type="radio" id="cfgAMD" name="manufactor" checked="checked" value="amd">
+                                    <label for="cfgAMD">
+                                        <span class="b-ico">
+                                            <img src="../img/image-cfg-amd.png" alt="">
+                                        </span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <input type="radio" id="cfgIntel" name="manufactor" value="intel">
+                                    <label for="cfgIntel">
+                                        <span class="b-ico">
+                                            <img src="../img/image-cfg-intel.png" alt="">
+                                        </span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="b-btn-get-started">подобрать компьютер</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    @*<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>*@

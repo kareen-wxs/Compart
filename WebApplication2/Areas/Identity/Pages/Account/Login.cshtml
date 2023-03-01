@@ -1,0 +1,39 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Вход";
+}
+<div style="background: url(https://ltdfoto.ru/images/2022/12/10/1122.png); background-size:cover;">
+
+
+    <div class="logcontainer">
+        <div style="height: 400px;" class="screen">
+            <div class="screen__content">
+
+                <form class="login" id="account" method="post">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="login__field">
+                        <i class="login__icon fa fa-user"></i>
+                        <input asp-for="Input.Email" class="login__input" placeholder="Email">
+                    </div>
+                    <div class="login__field">
+                        <i class="login__icon fa fa-lock"></i>
+                        <input asp-for="Input.Password" class="login__input" placeholder="Пароль">
+                    </div>
+                    <button class="button login__submit">
+                        <span class="button__text">Войти</span>
+                        <i class="button__icon fa fa-chevron-right"></i>
+                    </button>
+                </form>
+     
+            </div>
+            <div class="screen__background">
+                <span class="screen__background__shape screen__background__shape4"></span>
+                <span class="screen__background__shape screen__background__shape3"></span>
+                <span class="screen__background__shape screen__background__shape2"></span>
+                <span class="screen__background__shape screen__background__shape1"></span>
+            </div>
+        </div>
+    </div>
+</div>

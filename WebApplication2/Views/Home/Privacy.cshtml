@@ -1,0 +1,94 @@
+﻿@model CPU
+
+@{
+    Layout = "_Layout_2";
+}
+<div class="main-block">
+
+        <div class="first-block">
+            <div class="PROCESSORBLOCK">
+            <div class="PROCESSOR select-wrapper">Выберите матплату</div>
+			    <div class="AFTERPROCESSOR">
+				    <div class="processor_image">
+                    </div>
+				    <div class="processor_right">
+                        Линейка: AMD Ryzen 5 <br>
+                        Количество ядер: 8 <br>
+                        Цена: 150$        <br>
+                    </div>
+			    </div>
+            </div>
+            <div class="select-wrapper">
+                <select asp-for="Name" asp-items="@ViewBag.CPU" name="select" id="" class="PROCESSOR">
+                    <option selected disabled>Выбрать процессор</option>
+                </select>
+            </div>
+		    <div class="select-wrapper">
+			    <select asp-for="Name" asp-items="@ViewBag.GPU" name="select" id="" class="PROCESSOR">
+				    <option selected disabled>Выбрать видео карта</option>
+			    </select>
+		    </div>
+            <div class="select-wrapper">
+                <select asp-for="Name" asp-items="@ViewBag.Case" name="select" id="" class="PROCESSOR">
+                    <option selected disabled>Выберите корпус</option>
+                </select>
+            </div>
+            <div class="select-wrapper">
+                <select asp-for="Name" asp-items="@ViewBag.BP" name="select" id="" class="PROCESSOR">
+                    <option selected disabled>Выбрать блок питание</option>
+                </select>
+            </div>
+            <div class="select-wrapper">
+                <select asp-for="Name" asp-items="@ViewBag.TypeOfMemory" name="select" id="" class="PROCESSOR">
+                    <option selected disabled>Выбрать тип память</option>
+                </select>
+            </div>
+            <div class="select-wrapper">
+                <select asp-for="Name" asp-items="@ViewBag.ColvoMemory" name="select" id="" class="PROCESSOR">
+                    <option selected disabled>Выбрать объем памяти</option>
+                </select>
+            </div>        
+        </div>
+
+        <div class="second-block">
+            <img class="pc-photo" src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/97755363/original/69f9856cda9f356817127beb24a64007bf402b46/make-the-best-gaming-pc-with-your-budget.png">
+        </div>
+
+        <div class="third-block">
+		    <div class="select-wrapper">
+			    <select asp-for="Name" asp-items="@ViewBag.RAM" name="select" id="" class="PROCESSOR">
+				    <option selected disabled>Выбрать ОЗУ</option>
+			    </select>
+            </div>  
+            <div class="select-wrapper">
+                <select asp-for="Name" asp-items="@ViewBag.Cooler" name="select" id="" class="PROCESSOR">
+                    <option selected disabled>Выбрать кулер</option>
+                </select>
+            </div>
+            <div class="select-wrapper">
+                <select asp-for="Name" asp-items="@ViewBag.CoolingSystem" name="select" id="" class="PROCESSOR">
+                    <option selected disabled>Выберите систему охлаждения</option>
+                </select>
+            </div>
+          
+            <div class="select-wrapper">
+                <select asp-for="Name" asp-items="@ViewBag.VoiceCard" name="select" id="" class="PROCESSOR">
+                    <option selected disabled>Выберите голосовую карту</option>
+                </select>
+            </div>
+        
+	        <div class="select-wrapper">
+                <select asp-for="Name" asp-items="@ViewBag.DVD" name="select" id="" class="PROCESSOR">
+                    <option selected disabled>Выберите DVD-слот</option>
+                </select>
+            </div>
+            <div class="select-wrapper">
+                <select asp-for="Name" asp-items="@ViewBag.NetworkCard" name="select" id="" class="PROCESSOR">
+                    <option selected disabled>Выберите сетевую карту</option>
+                </select>
+            </div>
+        
+        
+        <button class="b-btn-get-started_1">подобрать компьютер</button>
+        </div>
+</div>
